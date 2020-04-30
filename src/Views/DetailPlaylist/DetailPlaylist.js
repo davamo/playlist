@@ -4,9 +4,8 @@ import React, { useState, useEffect } from 'react';
 const DetailPlaylist = (props) => {
     const { id } = props.match.params;
     const urlTemp = 'https://mychannel.nunchee.tv/api/ott/contents/details';
-
     const [data, loading] = useFetch(`${urlTemp}/${id}`);
-
+    
     function useFetch(url) {
         const [data, setData] = useState([]);
         const [loading, setLoading] = useState(true);

@@ -6,7 +6,6 @@ import  Slider from '../../Components/Slider';
 const Playlist = () => {
     const urlTemp = 'https://mychannel.nunchee.tv/api/generic/playlists/details/5b845b8346cc29000e4f186a?itemsPerPage=10';
     const [data, loading] = useFetch(`${urlTemp}`);
-    /*console.log('data', data);*/
     return (
       <>
         {loading ? <div>Loading...</div> :

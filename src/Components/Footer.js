@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const FooterNav = styled.footer`
     color: #ffffff;
     padding: 10px 20px;
+    background: #000;
 `;
 
 const Footer = () => (
