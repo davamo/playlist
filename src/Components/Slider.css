@@ -1,0 +1,1131 @@
+.contenedor{
+    /* position: relative;
+     display: inline-block;
+     text-align: center;*/
+     position: relative;
+     width: 100%;
+     padding: 35px 60px;
+     color: #eee;
+     text-align: left;
+     font-family: Roboto-Medium,sans-serif;
+     z-index: 0;
+ }
+  
+ .titulo{
+     position: absolute;
+     top: 10px;
+     left: 10px;
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: 40px;
+     
+ }
+ .centrado{
+     position: absolute;
+     top: 70%;
+     left: 20%;
+     transform: translate(-5%, -5%);
+     font-size: 12px;
+     color: #ffffff;
+  
+ }
+ 
+ /*--------*/
+ 
+ .contentDetailsModalOverlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     background-color: rgba(0, 0, 0, 0.85);
+     z-index: 5;
+ }
+ 
+ .contentDetailsModalContent {
+     position: fixed;
+     top: 80px;
+     left: 80px;
+     right: 80px;
+     bottom: 0;
+     overflow-y: auto;
+     background: #0b0d11;
+     border-radius: 5px 5px 0 0;
+ }
+ 
+ .contentDetailsModalContent.light {
+     background: #f7f8f9;
+ }
+ 
+ .ReactModalPortal .ReactModal__Overlay--after-open .contentDetailsModalContent {
+     animation-name: zoomIn;
+     animation-duration: 0.5s;
+ }
+ 
+ .ReactModalPortal .ReactModal__Overlay--after-open.ReactModal__Overlay--before-close .contentDetailsModalContent {
+     animation-name: zoomOut;
+     animation-duration: 0.5s;
+     opacity: 0;
+ }
+ 
+ .contentDetailsModalContent:focus {
+     outline: none;
+ }
+ 
+ .contentDetailsComponentOffset {
+     padding-bottom: 80px;
+ }
+ 
+ #contentDetailsModal {
+     overflow: auto;
+ }
+ 
+ .contentDetailsComponent {
+     position: relative;
+     height: 100%;
+ }
+ 
+ .contentDetailsComponent#contentDetailsPage {
+     min-height: calc(100vh - 145px - 80px);
+ }
+ 
+ .contentDetailsComponent hr {
+     height: 1px;
+     width: 100%;
+     color: #1e222a;
+     background-color: #1e222a;
+     border: none;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader {
+     padding: 13px 40px 30px 40px;
+     height: 82px;
+     top: 80px;
+     left: 0;
+     right: 0;
+     color: #dddddd;
+     font-size: 18px;
+     font-family: "Roboto-Regular", sans-serif;
+     background: #0b0d11;
+     z-index: 4;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader.fixed {
+     position: fixed;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader.modal {
+     padding: 30px 40px;
+     border-radius: 4px 4px 0 0;
+     top: 80px;
+     left: 80px;
+     right: 80px;
+ }
+ 
+ .contentDetailsComponent .headerAnchor.fixed {
+     padding-top: 82px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader span {
+     margin-left: 35px;
+     cursor: pointer;
+     line-height: 22px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader span:first-child {
+     margin-left: 0;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader span:hover,
+ .contentDetailsComponent .contentDetailsComponentHeader .seriesNameContainer:hover h4,
+ .contentDetailsComponent.kids .contentDetailsComponentHeader span:hover,
+ .contentDetailsComponent.kids .contentDetailsComponentHeader .seriesNameContainer:hover h4,
+ .contentDetailsComponent.kids .contentDetailsComponentHeader span:hover svg path,
+ .contentDetailsComponent.kids.light .contentDetailsComponentHeader span:hover svg path {
+     fill: #848484;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader span.selected {
+     font-family: "Roboto-Bold", sans-serif;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader span svg {
+     width: 20px;
+     height: 20px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader span:hover svg path {
+     fill: #848484;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader .seriesNameContainer {
+     display: flex;
+     align-items: center;
+     cursor: pointer;
+     outline: none;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader .seriesNameContainer svg {
+     height: 19px;
+     width: 9px;
+     margin-right: 36px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader .seriesNameContainer h4 {
+     font-family: "Roboto-Medium", sans-serif;
+     font-size: 24px;
+     color: #eeeeee;
+     line-height: 0;
+     font-weight: 500;
+ }
+ 
+ .contentDetailsComponent.light .contentDetailsComponentHeader span:hover,
+ .contentDetailsComponent.light .contentDetailsComponentHeader .seriesNameContainer:hover h4 {
+     color: #848484;
+ }
+ 
+ .contentDetailsComponent.light .contentDetailsComponentHeader .seriesNameContainer h4 {
+     color: #000;
+ }
+ 
+ .contentDetailsComponent.light .contentDetailsComponentHeader .seriesNameContainer svg path {
+     stroke: #000;
+ }
+ 
+ .contentDetailsComponent.kids.light .contentDetailsComponentHeader .seriesNameContainer h4 {
+     color: #eee;
+ }
+ 
+ .contentDetailsComponent.kids.light .contentDetailsComponentHeader .seriesNameContainer svg path {
+     stroke: #eee;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentHeader .seriesNameContainer:hover svg path {
+     stroke: #848484;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody {
+     width: 100%;
+     min-height: 528px;
+     position: relative;
+     z-index: 2;
+ }
+ 
+ .contentDetailsModalContent .contentDetailsComponent .contentDetailsComponentBody {
+     min-height: 528px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentImageContainer {
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     background-color: #0b0d11;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentImageContainer .contentImage .mask {
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     background-image: linear-gradient(to right, #0b0d11, rgba(0, 0, 0, .7) 20%, rgba(0, 0, 0, 0) 40%);
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentImageContainer .contentImage {
+     width: 938px;
+     height: 100%;
+     display: block;
+     position: absolute;
+     top: 0;
+     right: 0;
+     background-color: #0b0d11;
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: top right;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody img {
+     object-fit: cover;
+     object-position: center;
+     width: 100%;
+     height: 100%;
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer {
+     position: relative;
+     width: 100%;
+     padding: 35px 60px;
+     color: #eeeeee;
+     text-align: left;
+     font-family: "Roboto-Medium", sans-serif;
+     z-index: 0;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems {
+     width: 580px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .titleOfMovie {
+     font-family: "Roboto-Medium", sans-serif;
+     font-size: 36px;
+     font-weight: 500;
+     font-style: normal;
+     font-stretch: normal;
+     line-height: normal;
+     letter-spacing: 0;
+     color: #eeeeee;
+     margin-bottom: 21px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details {
+     margin-bottom: 26px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details img.ageRatingLogo {
+     position: relative;
+     height: 28px;
+     width: 28px;
+     margin-right: 14px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details .detailsElement {
+     font-family: "Roboto-Regular", sans-serif;
+     font-size: 14px;
+     letter-spacing: 0;
+     line-height: 16px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details .detailsElementSeparator {
+     height: 6px;
+     width: 6px;
+     color: #ffffff;
+     background-color: #ffffff;
+     border-radius: 50%;
+     margin: 0 10px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details .detailsElementSeparator:last-child {
+     display: none;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .abstract {
+     margin-bottom: 20px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems p {
+     font-family: "Roboto-Regular", sans-serif;
+     font-size: 16px;
+     color: #dddddd;
+     font-weight: normal;
+     font-style: normal;
+     font-stretch: normal;
+     line-height: 24px;
+     letter-spacing: 0;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .languagesAndSubtitlesContainer {
+     margin-bottom: 20px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .languagesAndSubtitlesContainer p {
+     font-family: "Roboto-Regular", sans-serif;
+     font-size: 14px;
+     line-height: 24px;
+     letter-spacing: 0;
+     color: #dddddd;
+     padding-bottom: 5px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .languagesAndSubtitlesContainer p:last-child {
+     padding-bottom: 0;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .languagesAndSubtitlesContainer p span {
+     font-family: "Roboto-Medium", sans-serif;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .actions {
+     position: relative;
+     display: flex;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .actions .buttonComponent {
+     margin: 0 10px 0 0;
+ }
+ 
+ .contentDetailsComponent .contentDetailsContents {
+     position: relative;
+     text-align: left;
+     padding: 30px 59px 0 60px;
+     z-index: 2;
+ }
+ 
+ .contentDetailsComponent .contentDetailsContents.carouselLayout {
+     padding-right: 0;
+     padding-left: 0;
+ }
+ 
+ .contentDetailsComponent .contentDetailsContents.carouselLayout .contentCarousel .carouselHeader,
+ .contentDetailsComponent .contentDetailsContents.carouselLayout .contentCarousel .carouselBody {
+     padding-left: 60px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsContents[id^="extrasSection"] {
+     z-index: 1;
+ }
+ 
+ .contentDetailsComponent .contentDetailsContents[id^="recommendationsSection"] {
+     padding-top: 60px;
+ }
+ 
+ .contentDetailsComponent #extrasSectionModal.contentDetailsContents {
+     padding-top: 0;
+ }
+ 
+ .contentDetailsComponent #extrasSectionModal.contentDetailsContents .carouselContainer .thumbsRowWrapper,
+ .contentDetailsComponent #extrasSection.contentDetailsContents {
+     padding-top: 60px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsContents .carouselContainer .thumbsRowWrapper .title {
+     color: #ffffff;
+     font-size: 24px;
+     font-family: Roboto-Medium, sans-serif;
+     margin-bottom: 20px;
+     text-transform: uppercase;
+     font-weight: 500;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentFooter {
+     padding: 60px;
+     color: #bbbbbb;
+     font-family: "Roboto-Regular", sans-serif;
+     text-align: left;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentEmptyFooter {
+     padding-top: 100px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentFooter img.ageRatingLogo {
+     position: relative;
+     height: 28px;
+     width: 28px;
+     margin-bottom: 15px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentFooter .castNCrew {
+     font-size: 24px;
+     font-weight: 500;
+     font-style: normal;
+     font-stretch: normal;
+     line-height: normal;
+     letter-spacing: normal;
+     color: #eeeeee;
+     font-family: "Roboto-Medium", sans-serif;
+     margin-bottom: 30px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol {
+     display: flex;
+     flex-direction: column;
+     margin-right: 60px;
+     min-width: 180px;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol:last-child {
+     margin-right: 0;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewHeaderElement {
+     margin-bottom: 15px;
+     font-size: 20px;
+     font-weight: 500;
+     font-style: normal;
+     font-stretch: normal;
+     line-height: normal;
+     letter-spacing: normal;
+     font-family: "Roboto-Medium", sans-serif;
+     color: #eeeeee
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewBodyElement {
+     display: flex;
+     flex-direction: column;
+     font-family: "Roboto-Regular", sans-serif;
+     font-size: 18px;
+     font-weight: normal;
+     font-style: normal;
+     font-stretch: normal;
+     letter-spacing: normal;
+     color: #bbbbbb;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewBodyElement span {
+     line-height: 20px;
+ }
+ 
+ .contentDetailsComponent.kids .contentDetailsComponentFooter .castNCrewHeader {
+     color: #000;
+ }
+ 
+ .contentDetailsComponent .contentDetailsComponentFooter .castNCrewHeaderElement {
+     padding: 0;
+ }
+ 
+ .contentDetailsComponent.light .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewHeaderElement,
+ .contentDetailsComponent.light .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewBodyElement,
+ .contentDetailsComponent.kids .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewHeaderElement,
+ .contentDetailsComponent.kids .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewBodyElement {
+     color: #000;
+ }
+ 
+ .contentDetailsComponent.kids {
+     background-color: #f7f8f9;
+ }
+ 
+ .contentDetailsComponent.kids .contentDetailsComponentHeader {
+     background: linear-gradient(to left, #3dace6, #3291e1 50%, #2e81dd);
+ }
+ 
+ .contentDetailsComponent.kids .contentDetailsComponentFooter {
+     color: #000;
+ }
+ 
+ .contentDetailsComponent.kids .contentDetailsComponentFooter .castNCrew {
+     color: #000;
+ }
+ 
+ .contentDetailsComponent.light {
+     background-color: #f7f8f9;
+ }
+ 
+ .contentDetailsComponent.light .contentDetailsComponentBody * {
+     color: #fff;
+ }
+ 
+ .contentDetailsComponent.kids.light .contentDetailsComponentBody .actions * {
+     color: #009dff;
+ }
+ 
+ .contentDetailsComponent.light .contentDetailsComponentHeader {
+     background-color: #f7f8f9;
+ }
+ 
+ .contentDetailsComponent.light .contentDetailsComponentFooter .castNCrew {
+     color: #000;
+ }
+ 
+ .contentDetailsComponent.light .contentDetailsComponentFooter {
+     color: #000;
+ }
+ 
+ .contentDetailsComponent.light .contentDetailsComponentHeader span:hover svg path {
+     fill: #4a4a4a;
+ }
+ 
+ .contentDetailsComponent.light .contentDetailsComponentHeader span svg path {
+     fill: #000;
+ }
+ 
+ .contentDetailsComponent.kids .contentDetailsComponentHeader span svg path {
+     fill: #fff;
+ }
+ 
+ .contentDetailsComponent.light .contentDetailsComponentHeader * {
+     color: #000;
+ }
+ 
+ .contentDetailsComponent.kids .contentDetailsComponentHeader * {
+     color: #ffffff;
+ }
+ 
+ @media (min-width: 600px) and (max-width: 1439px) {
+     .contentDetailsComponentOffset {
+         padding-bottom: 44px;
+     }
+ 
+     .contentDetailsModalContent {
+         top: 18px;
+         left: 20px;
+         right: 20px;
+         bottom: 0;
+     }
+ 
+     .contentDetailsComponent#contentDetailsPage {
+         min-height: calc(100vh - 158px - 44px);
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader {
+         padding: 20px 15px 20px 15px;
+         height: 51px;
+         top: 44px;
+         font-size: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader.modal {
+         padding: 20px;
+         top: 18px;
+         left: 20px;
+         right: 20px;
+     }
+ 
+     .contentDetailsComponent .headerAnchor.fixed {
+         padding-top: 51px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader span {
+         margin-left: 20px;
+         line-height: 11px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader span svg {
+         width: 10px;
+         height: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody {
+         min-height: 270px;
+     }
+ 
+     .contentDetailsModalContent .contentDetailsComponent .contentDetailsComponentBody {
+         min-height: 270px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentImageContainer .contentImage {
+         width: 413px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer {
+         padding: 20px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems {
+         width: 360px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .titleOfMovie {
+         font-size: 18px;
+         margin-bottom: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details {
+         margin-bottom: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details img.ageRatingLogo {
+         height: 14px;
+         width: 14px;
+         margin-right: 8px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details .detailsElement {
+         font-size: 8px;
+         line-height: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details .detailsElementSeparator {
+         height: 3px;
+         width: 3px;
+         margin: 0 4px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .abstract {
+         margin-bottom: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .abstract p {
+         line-height: 16px;
+         padding: 20px 20px 20px 20px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems p {
+         font-size: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .languagesAndSubtitlesContainer {
+         margin-bottom: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .languagesAndSubtitlesContainer p {
+         font-size: 10px;
+         line-height: 12px;
+         padding-bottom: 5px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .actions .buttonComponent {
+         margin: 0 5px 0 0;
+     }
+ 
+     .contentDetailsComponent .contentDetailsContents {
+         padding: 20px 20px 0 20px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsContents[id^="recommendationsSection"] {
+         padding-top: 20px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsContents.carouselLayout .contentCarousel .carouselHeader,
+     .contentDetailsComponent .contentDetailsContents.carouselLayout .contentCarousel .carouselBody {
+         padding-left: 20px;
+     }
+ 
+     .contentDetailsComponent #extrasSectionModal.contentDetailsContents .carouselContainer .thumbsRowWrapper,
+     .contentDetailsComponent #extrasSection.contentDetailsContents {
+         padding-top: 20px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsContents .carouselContainer .thumbsRowWrapper .title {
+         font-size: 14px;
+         margin-bottom: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter {
+         padding: 20px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentEmptyFooter {
+         padding-top: 65px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter img.ageRatingLogo {
+         position: relative;
+         height: 14px;
+         width: 14px;
+         margin-bottom: 5px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter .castNCrew {
+         font-size: 14px;
+         margin-bottom: 15px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol {
+         margin-right: 30px;
+         min-width: 100px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewHeaderElement {
+         margin-bottom: 5px;
+         font-size: 10px;
+         font-weight: 500;
+         font-style: normal;
+         font-stretch: normal;
+         line-height: normal;
+         letter-spacing: normal;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewBodyElement {
+         font-size: 10px;
+         font-weight: normal;
+         font-style: normal;
+         font-stretch: normal;
+         line-height: 1.2;
+         letter-spacing: normal;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader .seriesNameContainer svg {
+         height: 8px;
+         width: 4px;
+         margin-right: 15px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader .seriesNameContainer h4 {
+         font-family: "Roboto-Bold", sans-serif;
+         font-size: 14px;
+         line-height: 0;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .languagesAndSubtitlesContainer {
+         font-size: 10px;
+     }
+ }
+ 
+ @media (min-width: 768px) and (max-width: 1439px) {
+     .contentDetailsComponentOffset {
+         padding-bottom: 60px;
+     }
+ 
+     .contentDetailsModalContent {
+         top: 50px;
+         left: 35px;
+         right: 35px;
+         bottom: 0;
+     }
+ 
+     .contentDetailsComponent#contentDetailsPage {
+         min-height: calc(100vh - 137px - 60px);
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader {
+         padding: 8px 22px 22px 22px;
+         height: 60px;
+         top: 60px;
+         font-size: 14px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader.modal {
+         padding: 22px;
+         top: 50px;
+         left: 35px;
+         right: 35px;
+     }
+ 
+     .contentDetailsComponent .headerAnchor.fixed {
+         padding-top: 60px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader span {
+         line-height: 16px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader span svg {
+         width: 14px;
+         height: 14px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody {
+         min-height: 310px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentImageContainer .contentImage {
+         width: 476px;
+     }
+ 
+     .contentDetailsModalContent .contentDetailsComponent .contentDetailsComponentBody {
+         min-height: 310px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer {
+         padding: 15px 30px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems {
+         width: 417px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .titleOfMovie {
+         font-size: 24px;
+         margin-bottom: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details {
+         margin-bottom: 15px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details img.ageRatingLogo {
+         height: 20px;
+         width: 20px;
+         margin-right: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details .detailsElement {
+         font-size: 10px;
+         line-height: 12px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details .detailsElementSeparator {
+         height: 4px;
+         width: 4px;
+         margin: 0 6px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .abstract {
+         margin-bottom: 15px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .abstract p {
+         line-height: 17px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems p {
+         font-size: 11px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .languagesAndSubtitlesContainer {
+         margin-bottom: 15px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .languagesAndSubtitlesContainer p {
+         font-size: 10px;
+         line-height: 17px;
+         padding-bottom: 2px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .actions .buttonComponent {
+         margin: 0 8px 0 0;
+     }
+ 
+     .contentDetailsComponent .contentDetailsContents {
+         padding: 30px 30px 0 30px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsContents[id^="recommendationsSection"] {
+         padding-top: 30px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsContents.carouselLayout .contentCarousel .carouselHeader,
+     .contentDetailsComponent .contentDetailsContents.carouselLayout .contentCarousel .carouselBody {
+         padding-left: 30px;
+     }
+ 
+     .contentDetailsComponent #extrasSectionModal.contentDetailsContents .carouselContainer .thumbsRowWrapper,
+     .contentDetailsComponent #extrasSection.contentDetailsContents {
+         padding-top: 30px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsContents .carouselContainer .thumbsRowWrapper .title {
+         font-size: 16px;
+         margin-bottom: 15px;
+     }
+ 
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter {
+         padding: 30px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentEmptyFooter {
+         padding-top: 70px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter img.ageRatingLogo {
+         position: relative;
+         height: 20px;
+         width: 20px;
+         margin-bottom: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter .castNCrew {
+         font-size: 16px;
+         margin-bottom: 22px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol {
+         margin-right: 30px;
+         min-width: 126px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewHeaderElement {
+         margin-bottom: 10px;
+         font-size: 12px;
+         font-weight: 500;
+         font-style: normal;
+         font-stretch: normal;
+         line-height: normal;
+         letter-spacing: normal;
+ 
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewBodyElement {
+         font-size: 11px;
+         font-weight: normal;
+         font-style: normal;
+         font-stretch: normal;
+         line-height: 1.31;
+         letter-spacing: normal;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader .seriesNameContainer svg {
+         height: 10px;
+         width: 5px;
+         margin-right: 20px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader .seriesNameContainer h4 {
+         font-family: "Roboto-Bold", sans-serif;
+         font-size: 18px;
+     }
+ }
+ 
+ @media (min-width: 1024px) and (max-width: 1439px) {
+     .contentDetailsModalContent {
+         top: 56px;
+         left: 52px;
+         right: 51px;
+         bottom: 0;
+     }
+ 
+     .contentDetailsComponent#contentDetailsPage {
+         min-height: calc(100vh - 132px - 60px);
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader {
+         padding: 14px 22px 21px 22px;
+         height: 60px;
+         top: 60px;
+         font-size: 14px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader.modal {
+         padding: 22px;
+         top: 56px;
+         left: 52px;
+         right: 51px;
+     }
+ 
+     .contentDetailsComponent .headerAnchor.fixed {
+         padding-top: 60px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader span {
+         line-height: 16px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody {
+         min-height: 380px;
+     }
+ 
+     .contentDetailsModalContent .contentDetailsComponent .contentDetailsComponentBody {
+         min-height: 380px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentImageContainer .contentImage {
+         width: 675px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer {
+         padding: 30px 40px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems {
+         width: 417px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .titleOfMovie {
+         font-size: 24px;
+         margin-bottom: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details {
+         margin-bottom: 15px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details img.ageRatingLogo {
+         height: 21px;
+         width: 21px;
+         margin-right: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details .detailsElement {
+         font-size: 10px;
+         line-height: 12px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .details .detailsElementSeparator {
+         height: 5px;
+         width: 5px;
+         margin: 0 8px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .abstract {
+         margin-bottom: 15px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .abstract p {
+         line-height: 17px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems p {
+         font-size: 11px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .languagesAndSubtitlesContainer {
+         margin-bottom: 20px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .languagesAndSubtitlesContainer p {
+         font-size: 10px;
+         line-height: 17px;
+         padding-bottom: 2px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentBody .contentContainer .contentContainerItems .actions .buttonComponent {
+         margin: 0 8px 0 0;
+     }
+ 
+     .contentDetailsComponent .contentDetailsContents {
+         padding: 30px 39px 0 40px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsContents[id^="recommendationsSection"] {
+         padding-top: 40px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsContents.carouselLayout .contentCarousel .carouselHeader,
+     .contentDetailsComponent .contentDetailsContents.carouselLayout .contentCarousel .carouselBody {
+         padding-left: 40px;
+     }
+ 
+     .contentDetailsComponent #extrasSectionModal.contentDetailsContents .carouselContainer .thumbsRowWrapper,
+     .contentDetailsComponent #extrasSection.contentDetailsContents {
+         padding-top: 40px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsContents .carouselContainer .thumbsRowWrapper .title {
+         font-size: 18px;
+         margin-bottom: 15px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter {
+         padding: 40px 39px 40px 40px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentEmptyFooter {
+         padding-top: 70px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter img.ageRatingLogo {
+         position: relative;
+         height: 21px;
+         width: 21px;
+         margin-bottom: 10px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter .castNCrew {
+         font-size: 18px;
+         margin-bottom: 20px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol {
+         margin-right: 30px;
+         min-width: 176px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewHeaderElement {
+         margin-bottom: 10px;
+         font-size: 14px;
+         font-weight: 500;
+         font-style: normal;
+         font-stretch: normal;
+         line-height: normal;
+         letter-spacing: normal;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentFooter .castNCrewTable .castNCrewTableCol .castNCrewBodyElement {
+         font-size: 12px;
+         font-weight: normal;
+         font-style: normal;
+         font-stretch: normal;
+         line-height: 1.2;
+         letter-spacing: normal;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader .seriesNameContainer svg {
+         height: 12px;
+         width: 6px;
+         margin-right: 13px;
+     }
+ 
+     .contentDetailsComponent .contentDetailsComponentHeader .seriesNameContainer h4 {
+         font-family: "Roboto-Bold", sans-serif;
+         font-size: 18px;
+     }
+ }
+ 
